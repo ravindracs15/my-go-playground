@@ -20,9 +20,22 @@ func isSubsequence(s string, t string) bool {
 	}
 	return false
 }
+func longestCommonPrefix(strs []string) string {
+	p := strs[0]
+	for j := 1; j < len(strs); j++ {
+		s := strs[j]
+		i := 0
+		for ; i < len(s) && i < len(p) && p[i] == s[i]; i++ {
+
+		}
+		p = p[:i]
+	}
+	return p
+}
 
 func main() {
 	s := "abc"
-	t := "ahbgdc"
+	t := "abgdc"
 	fmt.Println(isSubsequence(s, t))
+	fmt.Println(longestCommonPrefix([]string{s, t}))
 }
